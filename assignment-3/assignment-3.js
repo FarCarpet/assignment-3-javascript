@@ -1,7 +1,29 @@
 
 var gamePieces = ["Rock", "Paper", "Scissors", "Dynamite"];
 
-var userThrow = prompt("Do you choose Rock, Paper, Scissors, or Dynamite ?");
+
+function ask(userThrow){
+     userThrow = prompt("Do you choose Rock, Paper, Scissors, or Dynamite ?");
+    if (userThrow != null) {
+            if (userThrow == "Rock") {
+                 userThrow = "Rock";
+            }else if (userThrow == "Paper") {
+                 userThrow = "Paper";
+            }else if (userThrow == "Scissors") {
+                 userThrow = "Scissors";
+            }else if (userThrow == "Dynamite") {
+                 userThrow = "Dynamite";
+            }else{
+                alert("I'm sorry it appears you entered an invalid throw.");
+            }
+        }else{
+            alert("I'm sorry it appears you entered an invalid throw.");
+            }
+    return userThrow;
+    }
+
+userThrow = ask(userThrow);
+
 
 var game = gamePieces.length;
 
@@ -33,7 +55,7 @@ if (computerChoice == 0) {
         computerChoice = "Dynamite";
     }
 
-    // console.log(userThrow); -- for testing
+    // console.log(userThrow);
 
     var result = whoWins(computerChoice, userThrow);
 
